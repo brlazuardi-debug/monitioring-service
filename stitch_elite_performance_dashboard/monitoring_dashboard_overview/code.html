@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Utama - CORE_OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Metropolis:wght@400;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#2a2a2a",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-fixed-dim": "#aed500",
+                      "secondary": "#c6c6c7",
+                      "secondary-container": "#454747",
+                      "surface": "#131313",
+                      "electric-blue": "#007AFF",
+                      "on-tertiary-fixed-variant": "#3d4d00",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "error-container": "#93000a",
+                      "primary": "#c6c6c6",
+                      "surface-tint": "#c6c6c6",
+                      "on-error": "#690005",
+                      "primary-container": "#000000",
+                      "inverse-on-surface": "#313030",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "tertiary-fixed": "#c7f300",
+                      "on-primary-fixed-variant": "#474747",
+                      "surface-bright": "#393939",
+                      "outline-variant": "#4c4546",
+                      "secondary-fixed": "#e2e2e2",
+                      "tertiary": "#aed500",
+                      "surface-variant": "#353534",
+                      "on-secondary": "#2f3131",
+                      "on-tertiary-container": "#667e00",
+                      "surface-container": "#201f1f",
+                      "signal-red": "#FF3B30",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "error": "#ffb4ab",
+                      "volt-accent": "#D1FF00",
+                      "surface-container-low": "#1c1b1b",
+                      "primary-fixed": "#e2e2e2",
+                      "on-surface-variant": "#cfc4c5",
+                      "surface-dim": "#131313",
+                      "graphite-gray": "#1C1C1E",
+                      "on-primary-container": "#757575",
+                      "tertiary-container": "#000000",
+                      "outline": "#988e90",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-highest": "#353534",
+                      "inverse-primary": "#5e5e5e",
+                      "on-tertiary": "#293500",
+                      "on-background": "#e5e2e1",
+                      "on-primary": "#303030",
+                      "on-tertiary-fixed": "#171e00",
+                      "frost-white": "#F5F5F7",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-secondary-container": "#b4b5b5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "margin-desktop": "40px",
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "metropolis"
+                      ],
+                      "display-lg": [
+                              "metropolis"
+                      ],
+                      "data-mono": [
+                              "jetbrainsMono"
+                      ],
+                      "headline-lg": [
+                              "metropolis"
+                      ],
+                      "title-md": [
+                              "inter"
+                      ],
+                      "body-base": [
+                              "inter"
+                      ],
+                      "label-caps": [
+                              "metropolis"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000; /* Pure black floor */
+            color: #e5e2e1;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism panel styling */
+        .glass-panel {
+            background-color: rgba(28, 28, 30, 0.6); /* #1C1C1E 60% */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Solid panel styling */
+        .solid-panel {
+            background-color: #1C1C1E; /* Level 1 Panel */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* The Adidas Shadow for brutalist depth */
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+        }
+
+        /* Pulse animation for live dots */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* Simple line chart path animation */
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+        .chart-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="flex h-screen w-full font-body-base text-body-base antialiased">
+<!-- SideNavBar -->
+<!-- JSON Styles: docked full-height left-0 w-20 hover:w-64 transition-all duration-300 overflow-hidden, bg-surface dark:bg-surface, border-r border-white/10, flex flex-col h-full py-base -->
+<nav class="hidden md:flex flex-col h-full py-base bg-surface border-r border-white/10 w-20 hover:w-64 transition-all duration-300 overflow-hidden flex-shrink-0 z-50 fixed left-0 top-0 group">
+<!-- Header -->
+<div class="px-4 mb-8 flex items-center gap-4 whitespace-nowrap">
+<div class="w-10 h-10 rounded-full bg-graphite-gray flex items-center justify-center border border-white/10 flex-shrink-0">
+<span class="material-symbols-outlined text-volt-accent" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="font-headline-lg text-[16px] font-bold text-volt-accent uppercase tracking-wider">OPS_CENTER</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant">Active Session</div>
+</div>
+</div>
+<!-- Main Tabs -->
+<!-- Target Active: "Dashboard" matches intent -->
+<div class="flex-1 flex flex-col gap-2 px-2 w-full">
+<!-- Active Tab -->
+<a class="flex items-center gap-4 px-3 py-3 rounded-lg text-volt-accent border-l-4 border-volt-accent bg-surface-container-high transition-transform scale-95 whitespace-nowrap" href="#">
+<span class="material-symbols-outlined flex-shrink-0">dashboard</span>
+<span class="font-title-md text-title-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-lg text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 whitespace-nowrap border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined flex-shrink-0">monitoring</span>
+<span class="font-title-md text-title-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-lg text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 whitespace-nowrap border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined flex-shrink-0">hub</span>
+<span class="font-title-md text-title-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Nodes</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-lg text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 whitespace-nowrap border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined flex-shrink-0">shield</span>
+<span class="font-title-md text-title-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Security</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-3 rounded-lg text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 whitespace-nowrap border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined flex-shrink-0">settings</span>
+<span class="font-title-md text-title-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">Settings</span>
+</a>
+</div>
+<!-- Footer Actions -->
+<div class="px-4 mt-auto flex flex-col gap-4 whitespace-nowrap">
+<button class="w-full bg-volt-accent text-primary-container font-label-caps text-label-caps py-2 rounded flex items-center justify-center gap-2 flex-shrink-0 shadow-sm brutalist-shadow hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-none transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">Deploy Node</span>
+</button>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-3 py-2 text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined flex-shrink-0 text-[18px]">help</span>
+<span class="font-title-md text-title-md text-[14px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Support</span>
+</a>
+<a class="flex items-center gap-4 px-3 py-2 text-on-surface-variant opacity-60 hover:opacity-100 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined flex-shrink-0 text-[18px]">terminal</span>
+<span class="font-title-md text-title-md text-[14px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">Logs</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-20 transition-all duration-300 min-h-screen">
+<!-- TopAppBar -->
+<!-- JSON Styles: flex justify-between items-center px-margin-desktop h-16 w-full z-40, bg-surface/80 backdrop-blur-xl, border-b border-white/10 -->
+<header class="flex justify-between items-center px-margin-desktop h-16 w-full z-40 bg-surface/80 backdrop-blur-xl border-b border-white/10 sticky top-0">
+<!-- Brand -->
+<div class="font-label-caps text-label-caps font-bold text-volt-accent tracking-widest">
+                CORE_OS
+            </div>
+<!-- Search (on_right) & Actions -->
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden md:flex items-center bg-primary-container border border-white/10 rounded px-3 py-1.5 focus-within:border-volt-accent transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-2">search</span>
+<input class="bg-transparent border-none text-data-mono font-data-mono text-on-surface focus:ring-0 placeholder:text-on-surface-variant/50 w-48 p-0" placeholder="Search systems..." type="text"/>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined hover:text-volt-accent cursor-pointer transition-colors opacity-80 hover:opacity-100">notifications_active</span>
+<span class="material-symbols-outlined hover:text-volt-accent cursor-pointer transition-colors opacity-80 hover:opacity-100">dns</span>
+<span class="material-symbols-outlined hover:text-volt-accent cursor-pointer transition-colors opacity-80 hover:opacity-100 md:hidden">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-1">Dashboard Utama</h1>
+<p class="font-data-mono text-data-mono text-on-surface-variant uppercase tracking-wider">System Status: <span class="text-volt-accent">Nominal</span></p>
+</div>
+<div class="hidden sm:flex items-center gap-2 bg-graphite-gray border border-white/10 px-3 py-1.5 rounded-sm">
+<div class="w-2 h-2 rounded-full bg-volt-accent pulse-dot"></div>
+<span class="font-data-mono text-data-mono text-on-surface uppercase">Live Feed</span>
+</div>
+</div>
+<!-- Top Metric Cards Grid (12-column layout: 4 cards x 3 cols = 12) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- CPU -->
+<div class="solid-panel p-4 rounded-lg flex flex-col gap-4 relative overflow-hidden brutalist-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Penggunaan CPU</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">memory</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">42<span class="text-title-md">%</span></div>
+</div>
+<div class="w-full bg-primary-container h-1 rounded-full mt-2">
+<div class="bg-volt-accent h-1 rounded-full" style="width: 42%;"></div>
+</div>
+</div>
+<!-- Memory -->
+<div class="solid-panel p-4 rounded-lg flex flex-col gap-4 relative overflow-hidden brutalist-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Memori Aktif</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">storage</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">8.4<span class="text-title-md font-data-mono">GB</span></div>
+</div>
+<div class="w-full bg-primary-container h-1 rounded-full mt-2">
+<div class="bg-electric-blue h-1 rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Disk -->
+<div class="solid-panel p-4 rounded-lg flex flex-col gap-4 relative overflow-hidden brutalist-shadow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Kapasitas Disk</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">hard_drive</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-on-surface">2.1<span class="text-title-md font-data-mono">TB</span></div>
+</div>
+<div class="w-full bg-primary-container h-1 rounded-full mt-2">
+<div class="bg-surface-tint h-1 rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<!-- Network -->
+<div class="solid-panel p-4 rounded-lg flex flex-col gap-4 relative overflow-hidden brutalist-shadow border-error/30">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Lalu Lintas Jaringan</span>
+<span class="material-symbols-outlined text-signal-red text-[18px]">router</span>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-signal-red">94<span class="text-title-md font-data-mono">MB/s</span></div>
+</div>
+<div class="w-full bg-primary-container h-1 rounded-full mt-2 flex">
+<div class="bg-signal-red h-1 rounded-l-full" style="width: 90%;"></div>
+<div class="bg-surface-tint h-1 rounded-r-full" style="width: 10%;"></div>
+</div>
+<!-- Status Chip -->
+<div class="absolute top-4 right-4 hidden lg:block">
+<div class="bg-signal-red text-primary-container font-data-mono text-[10px] px-1.5 py-0.5 rounded-sm uppercase font-bold">Kritis</div>
+</div>
+</div>
+</div>
+<!-- Main Layout: Chart (8 cols) + Side Panel (4 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Main Chart Area (Spans 8 cols) -->
+<div class="lg:col-span-8 glass-panel rounded-xl p-6 flex flex-col gap-6 relative">
+<div class="flex justify-between items-center border-b border-white/10 pb-4">
+<h2 class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Beban Sistem</h2>
+<div class="flex gap-2">
+<button class="px-2 py-1 bg-surface-container-highest text-on-surface text-data-mono font-data-mono rounded-sm border border-white/10 hover:border-volt-accent transition-colors">1H</button>
+<button class="px-2 py-1 bg-volt-accent text-primary-container text-data-mono font-data-mono rounded-sm font-bold">24H</button>
+<button class="px-2 py-1 bg-surface-container-highest text-on-surface text-data-mono font-data-mono rounded-sm border border-white/10 hover:border-volt-accent transition-colors">7D</button>
+</div>
+</div>
+<!-- SVG Line Chart Mockup -->
+<div class="w-full h-64 sm:h-80 relative mt-4">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="border-b border-white/5 w-full h-0"></div>
+<div class="border-b border-white/5 w-full h-0"></div>
+<div class="border-b border-white/5 w-full h-0"></div>
+<div class="border-b border-white/5 w-full h-0"></div>
+<div class="border-b border-white/10 w-full h-0"></div>
+</div>
+<!-- Y-Axis Labels -->
+<div class="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-on-surface-variant font-data-mono text-[10px] pb-4">
+<span>100%</span>
+<span>75%</span>
+<span>50%</span>
+<span>25%</span>
+<span>0%</span>
+</div>
+<!-- Chart Graphic -->
+<svg class="w-full h-full absolute inset-0 pl-8 pb-4" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="glow" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#D1FF00" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#D1FF00" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Fill Area -->
+<path d="M0,100 L0,60 Q10,40 20,50 T40,30 T60,70 T80,20 T100,40 L100,100 Z" fill="url(#glow)"></path>
+<!-- Line -->
+<path class="chart-path" d="M0,60 Q10,40 20,50 T40,30 T60,70 T80,20 T100,40" fill="none" stroke="#D1FF00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+<!-- Plot Points -->
+<circle cx="20" cy="50" fill="#131313" r="1.5" stroke="#D1FF00" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
+<circle cx="40" cy="30" fill="#131313" r="1.5" stroke="#D1FF00" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
+<circle cx="60" cy="70" fill="#131313" r="1.5" stroke="#D1FF00" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
+<circle cx="80" cy="20" fill="#131313" r="1.5" stroke="#D1FF00" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute bottom-0 left-8 right-0 flex justify-between text-on-surface-variant font-data-mono text-[10px]">
+<span>00:00</span>
+<span>06:00</span>
+<span>12:00</span>
+<span>18:00</span>
+<span>Now</span>
+</div>
+</div>
+</div>
+<!-- Side Panel (Spans 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Active Nodes -->
+<div class="solid-panel rounded-xl flex flex-col overflow-hidden">
+<div class="bg-surface-container-low p-4 border-b border-white/10 flex justify-between items-center">
+<h3 class="font-label-caps text-label-caps text-on-surface">Node Aktif</h3>
+<div class="bg-tertiary text-tertiary-container font-data-mono text-[10px] px-1.5 py-0.5 rounded-sm uppercase font-bold">Normal</div>
+</div>
+<div class="p-0 flex flex-col">
+<!-- Node Row -->
+<div class="flex items-center justify-between p-4 border-b border-white/5 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-data-mono text-data-mono text-on-surface">ND-alpha-01</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">99.9% Uptime</span>
+</div>
+<!-- Node Row -->
+<div class="flex items-center justify-between p-4 border-b border-white/5 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-data-mono text-data-mono text-on-surface">ND-beta-04</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-surface-variant">99.8% Uptime</span>
+</div>
+<!-- Node Row -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-electric-blue"></div>
+<span class="font-data-mono text-data-mono text-on-surface">ND-gamma-12</span>
+</div>
+<span class="font-data-mono text-data-mono text-electric-blue">Sinkronisasi</span>
+</div>
+</div>
+</div>
+<!-- Security Alerts -->
+<div class="solid-panel rounded-xl flex flex-col overflow-hidden">
+<div class="bg-surface-container-low p-4 border-b border-white/10 flex justify-between items-center">
+<h3 class="font-label-caps text-label-caps text-on-surface">Peringatan Keamanan</h3>
+<div class="bg-error text-on-error font-data-mono text-[10px] px-1.5 py-0.5 rounded-sm uppercase font-bold">Peringatan</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<!-- Alert Item -->
+<div class="border-l-2 border-error pl-3 py-1 flex flex-col gap-1">
+<div class="flex justify-between">
+<span class="font-data-mono text-data-mono text-error">Auth Failure Spike</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<span class="font-body-base text-[12px] text-on-surface-variant line-clamp-1">Multiple failed login attempts detected on US-East gateway.</span>
+</div>
+<!-- Alert Item -->
+<div class="border-l-2 border-volt-accent pl-3 py-1 flex flex-col gap-1">
+<div class="flex justify-between">
+<span class="font-data-mono text-data-mono text-volt-accent">Firmware Update</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant">1h ago</span>
+</div>
+<span class="font-body-base text-[12px] text-on-surface-variant line-clamp-1">Node ND-alpha-01 requires immediate patch applied.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
